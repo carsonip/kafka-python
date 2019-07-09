@@ -567,6 +567,7 @@ class KafkaClient(object):
         # Loop for futures, break after first loop if None
         responses = []
         while True:
+            time.sleep(0)  # Do not starve other greenlets if gevent is used
             with self._lock:
                 if self._closed:
                     break

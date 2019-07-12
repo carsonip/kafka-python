@@ -1,5 +1,6 @@
 from __future__ import absolute_import
-
+from gevent import monkey
+monkey.patch_all()
 import pytest
 
 from test.fixtures import KafkaFixture, ZookeeperFixture, random_string, version as kafka_version

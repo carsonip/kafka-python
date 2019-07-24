@@ -35,6 +35,7 @@ class TestKafkaConsumer:
 
 
 class TestMultiProcessConsumer(unittest.TestCase):
+    @unittest.skip('deprecated')
     @unittest.skipIf(sys.platform.startswith('win'), 'test mocking fails on windows')
     def test_partition_list(self):
         client = MagicMock()

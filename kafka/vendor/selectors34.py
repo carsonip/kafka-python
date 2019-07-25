@@ -635,5 +635,3 @@ elif 'PollSelector' in globals():
     DefaultSelector = PollSelector
 else:
     DefaultSelector = SelectSelector
-
-DefaultSelector = PollSelector

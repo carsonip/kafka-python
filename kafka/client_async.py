@@ -10,15 +10,8 @@ import threading
 import time
 import weakref
 
-# selectors in stdlib as of py3.4
-try:
-    import selectors  # pylint: disable=import-error
-except ImportError:
-    # vendored backport module
-    from kafka.vendor import selectors34 as selectors
-
 from kafka.vendor import six
-
+from kafka.selectors import selectors
 from kafka.cluster import ClusterMetadata
 from kafka.conn import BrokerConnection, ConnectionStates, collect_hosts, get_ip_port_afi
 from kafka import errors as Errors

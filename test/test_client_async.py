@@ -1,17 +1,10 @@
 from __future__ import absolute_import, division
 
-# selectors in stdlib as of py3.4
-try:
-    import selectors # pylint: disable=import-error
-except ImportError:
-    # vendored backport module
-    import kafka.vendor.selectors34 as selectors
-
 import socket
 import time
 
 import pytest
-
+from kafka.selectors import selectors
 from kafka.client_async import KafkaClient, IdleConnectionManager
 from kafka.cluster import ClusterMetadata
 from kafka.conn import ConnectionStates

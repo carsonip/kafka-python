@@ -6,14 +6,6 @@ import errno
 import io
 import logging
 from random import shuffle, uniform
-
-# selectors in stdlib as of py3.4
-try:
-    import selectors  # pylint: disable=import-error
-except ImportError:
-    # vendored backport module
-    from kafka.vendor import selectors34 as selectors
-
 import socket
 import struct
 import sys
@@ -21,7 +13,7 @@ import threading
 import time
 
 from kafka.vendor import six
-
+from kafka.selectors import selectors
 import kafka.errors as Errors
 from kafka.future import Future
 from kafka.metrics.stats import Avg, Count, Max, Rate

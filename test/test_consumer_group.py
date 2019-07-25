@@ -73,6 +73,7 @@ def test_group(kafka_broker, topic):
     try:
         timeout = time.time() + 35
         while True:
+            time.sleep(0)
             for c in range(num_consumers):
 
                 # Verify all consumers have been created
